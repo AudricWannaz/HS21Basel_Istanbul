@@ -90,19 +90,33 @@ def archeo_mus():
     
 
 	st.subheader('I. Griechisch-römische Quellen')
+
+	if st.button('Plut. Alexander 33.3-33.5'):
+		st.write('''
+			<https://scaife.perseus.org/reader/urn:cts:greekLit:tlg0007.tlg047.perseus-eng2:33.3-33.5?right=perseus-grc2>''')
+
+	if st.button('Curt. 4.16.1-7'):
+		st.write('''
+			<https://scaife.perseus.org/reader/urn:cts:latinLit:phi0860.phi001.perseus-lat2:4.16.1-4.16.7?q=alexander&qk=form''')
+
 	st.subheader('II. weiterführende Sekundärliteratur')
 
+	with st.expander('Heckel 2006'):
+		st.write('''Waldemar HECKEL: Mazaeus, Callisthenes and the Alexander Sarcophagus. Historia: Zeitschrift für Alte Geschichte (55,4) 2006, 385-396.''')
+		st.write('''<http://www.jstor.org/stable/4436826>''')
 	# put best image here st.image()
 
 	st.subheader('Varia')
-	colc, cold = st.columns(2)
-	with colc:
-		st.write('premier groupe imgs')
-		st.image('room6.jpg')
-	with cold:
-		st.write('deuxieme groupe img')
-		st.image('baby_couple.jpg')
-	render_3d('head.html')
+
+	with st.expander('+'):
+		colc, cold = st.columns(2)
+		with colc:
+			#st.write('premier groupe imgs')
+			st.image('room6.jpg')
+		with cold:
+			#st.write('deuxieme groupe img')
+			st.image('baby_couple.jpg')
+		render_3d('head.html')
 
 	with st.expander('more images'):
 		st.write('https://commons.wikimedia.org/w/index.php?search=istanbul+archaeology+museum&title=Special:MediaSearch&go=Go&type=image')
@@ -123,11 +137,16 @@ def orient_mus():
 
 	st.subheader('II. Griechisch-römische Quellen')
 	
-	with st.expander('Cyrus nimmt Babylon ein'):
-		st.write('show passage hero')
+	if st.button('Herodot Hist. 1.190'):
+		st.write('''
+			<https://scaife.perseus.org/reader/urn:cts:greekLit:tlg0016.tlg001.perseus-eng2:1.190>''')
 
-	with st.expander('Vitruv zu den Ziegeln Babylons'):
-		st.write('2 cols source et trad')
+	if st.button('Vitruv 1.5.8'):
+		st.write('''
+			<https://scaife.perseus.org/reader/urn:cts:latinLit:phi1056.phi001.perseus-lat1:1.5.8?q=babylon&qk=form&right=perseus-eng1>''')
+
+
+
 
 	st.subheader('III. weiterführende Sekundärliteratur')
 
@@ -136,14 +155,15 @@ def orient_mus():
 	st.subheader('Varia')
 	cola, colb = st.columns(2)
 	with cola:
-		st.write('premier groupe imgs')
+		#st.write('premier groupe imgs')
 		st.image('double_sphinx.jpg')
 		#st.image('mummy_thebes.jpg')
 		#st.image('')
 		st.image('knight.jpg')
+		#render_3d('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Mummy_in_Istanbul_Archaeological_Museums.jpg/640px-Mummy_in_Istanbul_Archaeological_Museums.jpg')
 
 	with colb:
-		st.write('deuxieme groupe img')
+		#st.write('deuxieme groupe img')
 		#st.image('')
 		st.image('south_arabian.jpg')
 		st.image('hand.jpg')
@@ -173,9 +193,39 @@ def credits():
 	
 def ask_quiz():
 
-# lisa question:
+	q2_options = ['Hephaestion','Alexander', 'Abdalonymus', 'we do not know']
+	q3_options = ['weil Lysipp den Sarkophag als Hofkünstler erstellt hat', 'weil man ihm im Heiligtum des Alexanders gefunden hat', 'weil Attribute des Alexanders eindeutig erkennbar sind', 'weil er dort begraben war']
+	q4_options = ['Dareios I.', 'Dareios II.', 'Dareios III.']
+	q6_options = ['De ipso autem muro (...)', '', 'non enim (...)', 'sed ubi sunt (...)']
+	answers = [1891, 'Abdalonymus','weil Attribute des Alexanders eindeutig erkennbar sind','Dareios III.', 'babylon', 'non enim (...)', 'house of the faun','lahmassu']
+	q7_options = ['villa dei misteri', 'house of the faun', 'house of the vettii', 'house of the prince of naples']
+	q8_options = ['unicorn', 'chimera', 'gryffin', 'lahmassu']
+#eig faslsch nicht lamassu
+	with st.form('form_quiz'):
+		st.image('ishtar.jpg')
+		q8 = st.radio('Wie wird dieses Tier genannt?', q8_options)
+		q1 = st.number_input('1. Wann wurde das archäologische Museum gegründet?', 1700)
+		q2 = st.radio('2. Wer liegt im Alexander Sarkophag (laut Heckel 2006)', q2_options)
+		q3 = st.radio('3. Warum wird der Sarkophag mit Alexander d.G. in Verbindung gebracht?', q3_options)
+		q4 = st.radio('4. Welcher Dareios flieht vor Alexander in der Stelle von Plutarch?', q4_options)
+		q5 = st.text_input('5. Wo stand das Ischtar-Tor?').lower()
+		q6 = st.radio('6. Welcher Satz des Vitruvs lehrt uns etwas über das Ischtar-Tor?', q6_options)
+		q7 = st.radio('7. Eine Seite des Alexandersarkophages wird oft mit einer berühmten Schlacht in Verbindung gebracht. Eine Mosaik, die diese Schlacht darstellt, wurde in Pompeii gefunden. In welchem Haus?', q7_options)
 
-	st.write('the battle depicted in ___ is probably also to be seen on a mosaic in which house of Pompei?')
+		sub = st.form_submit_button('CHECK ANSWERS')
+		if sub:
+			if [q1,q2,q3,q4,q5,q6,q7,q8] == answers:
+				st.balloons()
+				st.success('Correct!')
+			else:
+				st.error('Not quite, try again!') 
+
+
+
+#1891
+
+# lisa question:
+#st.write('the battle depicted in ___ is probably also to be seen on a mosaic in which house of Pompei?')
 #choices:
 #house of the faun>correct
 #villa dei misteri
@@ -183,10 +233,8 @@ def ask_quiz():
 #house of the golden cupids
 #house of the prince of naples
 
-
 # stefania: 
-
-	st.write('whats the name of the animal depicted')
+#st.write('whats the name of the animal depicted on the page')
 
 #lahmassu
 #chim(a)era
@@ -194,11 +242,18 @@ def ask_quiz():
 #unicorn
 	
 
-	
 
+#laut heckel 2006, wer liegt im Alexander Sarkophag:
 
-	
-	
+#warum wird der Sarkophag überhaupt mit Alexander d.G in verbindung gebracht?
+
+#
+#
+
+#
+
+#
+
 
 def main():
 	if 'see_url' not in st.session_state:
@@ -209,6 +264,8 @@ def main():
 		archeo_mus()
 	elif choice == 'Ancient Orient Museum':
 		orient_mus()
+	elif choice == 'Quiz':
+		ask_quiz()
 	else:
 		st.error('Something went wrong')
 	credits()
