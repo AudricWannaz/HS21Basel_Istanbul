@@ -14,6 +14,11 @@ import streamlit.components.v1 as components
 #Python erklären
 #
 
+
+st.write('''
+	<https://www.jstor.org/action/doBasicSearch?Query=alexander+sarcophagus&acc=on&wc=on&fc=off&group=none&refreqid=search%3Abdafc6066e6f6e7ad0ac2ff045a153a2&groupefq=WyJjb250cmlidXRlZF9pbWFnZXMiXQ%3D%3D&efqs=eyJjdHkiOlsiWTI5dWRISnBZblYwWldSZmFXMWhaMlZ6Il0sImNsYXNzaWZpY2F0aW9uIjpbXSwiY291bnRyeSI6W10sImNvbGxlY3Rpb25faWRzIjpbXX0%3D&pagemark=eyJwYWdlIjoyLCJzdGFydHMiOnsiSlNUT1JCYXNpYyI6MjV9fQ%3D%3D&searchkey=1635359424580>
+	''')
+
 st.title('Visiting the Archaeological and the Orient Museums of Istanbul')
 
 
