@@ -20,7 +20,7 @@ def alex_sar_jstor():
 		''')
 
 
-st.title('Visiting the Archaeological and the Orient Museums of Istanbul')
+st.title('Visiting the Archaeological and the Orient Museum of Istanbul')
 
 def heckel_button():
 	st.write('heckel 2006 button')
@@ -91,7 +91,7 @@ def archeo_mus():
 
 	st.subheader('I. Griechisch-römische Quellen')
 
-	if st.button('Plut. Alexander 33.3-33.5'):
+	if st.button('Plut.Alex. 33.3-33.5'):
 		st.write('''
 			<https://scaife.perseus.org/reader/urn:cts:greekLit:tlg0007.tlg047.perseus-eng2:33.3-33.5?right=perseus-grc2>''')
 
@@ -137,11 +137,11 @@ def orient_mus():
 
 	st.subheader('II. Griechisch-römische Quellen')
 	
-	if st.button('Herodot Hist. 1.190'):
+	if st.button('Hdt. 1.190'):
 		st.write('''
 			<https://scaife.perseus.org/reader/urn:cts:greekLit:tlg0016.tlg001.perseus-eng2:1.190>''')
 
-	if st.button('Vitruv 1.5.8'):
+	if st.button('Vitr. 1.5.8'):
 		st.write('''
 			<https://scaife.perseus.org/reader/urn:cts:latinLit:phi1056.phi001.perseus-lat1:1.5.8?q=babylon&qk=form&right=perseus-eng1>''')
 
@@ -210,8 +210,8 @@ def ask_quiz():
 	q3_options = ['weil Lysipp den Sarkophag als Hofkünstler erstellt hat', 'weil man ihn im Heiligtum des Alexanders gefunden hat', 'weil Attribute des Alexanders eindeutig erkennbar sind', 'weil er dort begraben war']
 	q4_options = ['Dareios I.', 'Dareios II.', 'Dareios III.']
 	q6_options = ['De ipso autem muro (...)', 'non enim (...)', 'sed ubi sunt (...)']
-	answers = [1891, 'Abdalonymus','weil Attribute des Alexanders eindeutig erkennbar sind','Dareios III.', 'babylon', 'non enim (...)', 'house of the faun','Mušḫuššu']
-	q7_options = ['villa dei misteri', 'house of the faun', 'house of the Vettii', 'house of the prince of Naples']
+	answers = [1891, 'Abdalonymus','weil Attribute des Alexanders eindeutig erkennbar sind','Dareios III.', 'babylon', 'non enim (...)', 'house of the Faun','Mušḫuššu']
+	q7_options = ['villa dei misteri', 'house of the Faun', 'house of the Vettii', 'house of the prince of Naples']
 	q8_options = ['Unicorn', 'Mušḫuššu', 'Chimera', 'Griffin', 'Lamassu']
 #eig faslsch nicht lamassu
 	with st.form('form_quiz'):
@@ -222,7 +222,7 @@ def ask_quiz():
 		q3 = st.radio('3. Warum wird der Sarkophag mit Alexander d.G. in Verbindung gebracht?', q3_options)
 		q4 = st.radio('4. Welcher Dareios flieht vor Alexander in der Stelle von Plutarch?', q4_options)
 		q5 = st.text_input('5. Wo stand das Ischtar-Tor?').lower()
-		q6 = st.radio('6. Welcher Satz des Vitruvs lehrt uns etwas über das Ischtar-Tor?', q6_options)
+		q6 = st.radio('6. Welcher Satz des Vitruvs lehrt uns möglicherweise etwas über das Ischtar-Tor?', q6_options)
 		st.write('''Eine Seite des Alexandersarkophages wird oft mit einer berühmten Schlacht in Verbindung gebracht.\n Eine Mosaik, die diese Schlacht darstellt, wurde in Pompeii gefunden.\n''')
 		q7 = st.radio('''7. In welchem Haus?''', q7_options)
 
