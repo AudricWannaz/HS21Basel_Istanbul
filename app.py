@@ -102,21 +102,21 @@ def archeo_mus():
 	st.subheader('II. weiterführende Sekundärliteratur')
 
 	with st.expander('Heckel 2006'):
-		st.write('''Waldemar HECKEL: Mazaeus, Callisthenes and the Alexander Sarcophagus. Historia: Zeitschrift für Alte Geschichte (55,4) 2006, 385-396.''')
+		st.write('''Waldemar Heckel: "Mazaeus, Callisthenes and the Alexander Sarcophagus". Historia: Zeitschrift für Alte Geschichte (55,4) 2006, 385-396.''')
 		st.write('''<http://www.jstor.org/stable/4436826>''')
 	# put best image here st.image()
 
 	st.subheader('Varia')
 
-	with st.expander('+'):
-		colc, cold = st.columns(2)
-		with colc:
-			#st.write('premier groupe imgs')
-			st.image('room6.jpg')
-		with cold:
-			#st.write('deuxieme groupe img')
-			st.image('baby_couple.jpg')
-		render_3d('head.html')
+	#with st.expander('+'):
+	colc, cold = st.columns(2)
+	with colc:
+		#st.write('premier groupe imgs')
+		st.image('room6.jpg')
+	with cold:
+		#st.write('deuxieme groupe img')
+		st.image('baby_couple.jpg')
+	render_3d('head.html')
 
 	with st.expander('more images'):
 		st.write('https://commons.wikimedia.org/w/index.php?search=istanbul+archaeology+museum&title=Special:MediaSearch&go=Go&type=image')
@@ -128,7 +128,7 @@ def render_3d(filename):
 	components.html(source_code)
 
 def orient_mus():
-	st.header('Ancient Orient Museum')
+	st.title('Ancient Orient Museum')
 
 	st.subheader('The Ishtar Gate')
 	st.image('ishtar.jpg')
@@ -150,7 +150,16 @@ def orient_mus():
 
 	st.subheader('III. weiterführende Sekundärliteratur')
 
-	st.write('digitale rekonstruktion')
+	with st.expander('Pedersén 2018'):
+		st.write('''Olof Pedersén: "The Ishtar Gate Area in Babylon. From Old Documents to New Interpretations ina Digital Model". ZOrA (2018, 11), 160-178.''')
+		st.write('''<https://www.academia.edu/38545436/The_Ishtar_Gate_Area_in_Babylon_From_Old_Documents_to_New_Interpretations_in_a_Digital_Model>''')
+
+	with st.expander('Poster by Hedegard et al.'):
+		st.write('''<https://www.academia.edu/25465550/Babylonian_Blues_Studying_the_blue_and_turquoise_green_glazes_of_the_Ishtar_Gate_and_the_Processional_Way>''')
+
+
+
+	
 
 	st.subheader('Varia')
 	cola, colb = st.columns(2)
@@ -181,9 +190,13 @@ def credits():
 		st.image('unibas.png', width=60)
 	with st.expander('more:'):
 		st.write('All media used in the webapp are under a (CC BY-SA 4.0) license or equivalent')
-		see_url = st.button('Display url of all media?')
+		see_url = st.button('+')
 		if see_url:
-			st.session_state.see_url = True
+			st.write('Images stem from wikimedia commons:')
+			st.write('''<https://commons.wikimedia.org/wiki/Main_Page>''')
+			st.write('3d Models stem from Sketchfab')
+			st.write('''<https://sketchfab.com/>''')
+			#st.session_state.see_url = True
 
 # >>> import plotly.express as px
 # >>> fig = px.box(range(10))
@@ -194,12 +207,12 @@ def credits():
 def ask_quiz():
 
 	q2_options = ['Hephaestion','Alexander', 'Abdalonymus', 'we do not know']
-	q3_options = ['weil Lysipp den Sarkophag als Hofkünstler erstellt hat', 'weil man ihm im Heiligtum des Alexanders gefunden hat', 'weil Attribute des Alexanders eindeutig erkennbar sind', 'weil er dort begraben war']
+	q3_options = ['weil Lysipp den Sarkophag als Hofkünstler erstellt hat', 'weil man ihn im Heiligtum des Alexanders gefunden hat', 'weil Attribute des Alexanders eindeutig erkennbar sind', 'weil er dort begraben war']
 	q4_options = ['Dareios I.', 'Dareios II.', 'Dareios III.']
-	q6_options = ['De ipso autem muro (...)', '', 'non enim (...)', 'sed ubi sunt (...)']
-	answers = [1891, 'Abdalonymus','weil Attribute des Alexanders eindeutig erkennbar sind','Dareios III.', 'babylon', 'non enim (...)', 'house of the faun','lahmassu']
-	q7_options = ['villa dei misteri', 'house of the faun', 'house of the vettii', 'house of the prince of naples']
-	q8_options = ['unicorn', 'chimera', 'gryffin', 'lahmassu']
+	q6_options = ['De ipso autem muro (...)', 'non enim (...)', 'sed ubi sunt (...)']
+	answers = [1891, 'Abdalonymus','weil Attribute des Alexanders eindeutig erkennbar sind','Dareios III.', 'babylon', 'non enim (...)', 'house of the faun','Mušḫuššu']
+	q7_options = ['villa dei misteri', 'house of the faun', 'house of the Vettii', 'house of the prince of Naples']
+	q8_options = ['Unicorn', 'Mušḫuššu', 'Chimera', 'Griffin', 'Lamassu']
 #eig faslsch nicht lamassu
 	with st.form('form_quiz'):
 		st.image('ishtar.jpg')
