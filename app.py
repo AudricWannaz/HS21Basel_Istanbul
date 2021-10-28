@@ -223,7 +223,8 @@ def ask_quiz():
 		q4 = st.radio('4. Welcher Dareios flieht vor Alexander in der Stelle von Plutarch?', q4_options)
 		q5 = st.text_input('5. Wo stand das Ischtar-Tor?').lower()
 		q6 = st.radio('6. Welcher Satz des Vitruvs lehrt uns etwas über das Ischtar-Tor?', q6_options)
-		q7 = st.radio('''7. Eine Seite des Alexandersarkophages wird oft mit einer berühmten Schlacht in Verbindung gebracht.\n Eine Mosaik, die diese Schlacht darstellt, wurde in Pompeii gefunden.\n In welchem Haus?''', q7_options)
+		st.write('''Eine Seite des Alexandersarkophages wird oft mit einer berühmten Schlacht in Verbindung gebracht.\n Eine Mosaik, die diese Schlacht darstellt, wurde in Pompeii gefunden.\n''')
+		q7 = st.radio('''7. In welchem Haus?''', q7_options)
 
 		sub = st.form_submit_button('CHECK ANSWERS')
 		if sub:
