@@ -15,7 +15,8 @@ import streamlit.components.v1 as components
 #
 
 def intro_streamlit():
-	st.title('This is a Streamlit app. To navigate, use the sidebar to your left (cliking the arrow on the upper left expands it ). Click on the three lines at the upper right part of your screen to access the Settings')
+	st.title('To navigate, use the sidebar to your left (cliking the arrow on the upper left expands it ).') 
+	st.title('Click on the three lines at the upper right part of your screen to access the Settings')
 
 def alex_sar_jstor():
 	st.write('''
