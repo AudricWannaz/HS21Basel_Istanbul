@@ -14,6 +14,9 @@ import streamlit.components.v1 as components
 #Python erklären
 #
 
+def intro_streamlit():
+	st.title('This is a Streamlit app. To navigate, use the sidebar to your left (cliking the arrow on the upper left expands it ). Click on the three lines at the upper right part of your screen to access the Settings')
+
 def alex_sar_jstor():
 	st.write('''
 		<https://www.jstor.org/action/doBasicSearch?Query=alexander+sarcophagus&acc=on&wc=on&fc=off&group=none&refreqid=search%3Abdafc6066e6f6e7ad0ac2ff045a153a2&groupefq=WyJjb250cmlidXRlZF9pbWFnZXMiXQ%3D%3D&efqs=eyJjdHkiOlsiWTI5dWRISnBZblYwWldSZmFXMWhaMlZ6Il0sImNsYXNzaWZpY2F0aW9uIjpbXSwiY291bnRyeSI6W10sImNvbGxlY3Rpb25faWRzIjpbXX0%3D&pagemark=eyJwYWdlIjoxLCJzdGFydHMiOnsiSlNUT1JCYXNpYyI6MH19&searchkey=1635365138675>
@@ -35,6 +38,9 @@ choice = st.sidebar.selectbox('Go to', ['Home', 'Archaeological Museum', 'Ancien
 
 
 def home():
+
+	intro_streamlit()
+
 	st.image('main_entrance.jpg')
 
 	if st.button('Wiki'):
