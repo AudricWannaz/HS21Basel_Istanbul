@@ -15,7 +15,7 @@ import streamlit.components.v1 as components
 #
 
 def intro_streamlit():
-	st.title('To navigate, use the sidebar (click 〉to expand it ).')
+	st.title('To navigate, use the sidebar! Click 〉to expand it.')
 	st.title('↖') 
 	st.title('Click on ☰ to access the Settings')
 	st.title('↗')
