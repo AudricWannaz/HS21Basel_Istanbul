@@ -15,9 +15,10 @@ import streamlit.components.v1 as components
 #
 
 def intro_streamlit():
-	st.title('To navigate, use the sidebar to your left (cliking the arrow on the upper left expands it ).') 
-	st.title('Click on the three lines at the upper right part of your screen to access the Settings')
-
+	st.title('To navigate, use the sidebar (click 〉to expand it ).')
+	st.title('↖') 
+	st.title('Click on ☰ to access the Settings')
+	st.title('↗')
 def alex_sar_jstor():
 	st.write('''
 		<https://www.jstor.org/action/doBasicSearch?Query=alexander+sarcophagus&acc=on&wc=on&fc=off&group=none&refreqid=search%3Abdafc6066e6f6e7ad0ac2ff045a153a2&groupefq=WyJjb250cmlidXRlZF9pbWFnZXMiXQ%3D%3D&efqs=eyJjdHkiOlsiWTI5dWRISnBZblYwWldSZmFXMWhaMlZ6Il0sImNsYXNzaWZpY2F0aW9uIjpbXSwiY291bnRyeSI6W10sImNvbGxlY3Rpb25faWRzIjpbXX0%3D&pagemark=eyJwYWdlIjoxLCJzdGFydHMiOnsiSlNUT1JCYXNpYyI6MH19&searchkey=1635365138675>
